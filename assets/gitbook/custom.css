@@ -57,9 +57,23 @@
     background: #f3eacb;
 }
 
+
+
+/*  Dark Theme  */
+
 .book.color-theme-2 .book-body .book-header {
     background: #1c1f2b;
 }
+.book.color-theme-2 .book-body .body-inner {
+    background: #1c1f2b;
+}
+.book.color-theme-2 .book-body .page-wrapper .page-inner section{
+    background: none;
+}
+
+/*  Dark Theme End  */
+
+
 
 .page-inner {
     max-width: {{ site.page_width | default: '800px' }};
@@ -170,7 +184,27 @@
     overflow-x: scroll;
 }
 
+
+
+
 /* Tips, warnings, and dangers */
+
+
+/*  Dark Theme  */
+.book.color-theme-2 .markdown-section blockquote.block-tip {
+    border-color: var(--c-tip-dark);
+    background-color: var(--c-tip-bg-dark);
+    color: var(--c-tip-text);
+    font-family: var(--font-family);
+}
+
+.book.color-theme-2 .markdown-section blockquote.block-doc {
+    border-color: var(--c-tip-dark);
+    background-color: var(--c-doc-bg-dark);
+    color: var(--c-doc-text);
+    font-family: var(--font-family);
+}
+
 
 .markdown-section blockquote.block-tip {
     border-color: var(--c-tip);
@@ -194,6 +228,7 @@
 .markdown-section blockquote.block-tip h4 {
     color: var(--c-tip-title);
 }
+
 
 .markdown-section blockquote.block-tip h5 {
     color: var(--c-tip-title);
@@ -266,10 +301,17 @@
 }
 
 :root {
+    /* Dark theme */
+    --c-tip-bg-dark: #b7e2ce;
+
+    --c-doc: #427fb9;
+    --c-doc-bg-dark: #92b8f0;
+    --c-doc-text: #0b4278;
+    /* d */
     --c-tip: #42b983;
     --c-tip-bg: #e2f5ec;
     --c-tip-text: #215d42;
-    --c-tip-title: #359469;
+    --c-tip-title: #11cc78;
     --c-warning: #e7c000;
     --c-warning-bg: rgba(255, 229, 100, .25);
     --c-warning-text: #6b5900;
@@ -280,3 +322,22 @@
     --c-danger-title: #c00;
     --font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
+
+dl dt:first-child{
+padding-top: 1em;
+
+}
+dl dd:last-child{
+padding-bottom: 1em;
+}
+
+dl > dd {
+    text-indent: 2em;
+}
+
+.ddNote {
+    text-indent: 0.6em;
+    font-style: italic;
+}
+
+@import url('custom-local.css')
