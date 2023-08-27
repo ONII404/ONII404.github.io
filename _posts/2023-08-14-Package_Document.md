@@ -74,9 +74,9 @@ El elemento `package` es el elemento raíz del `Package Document` y debe contene
 </package>
 ~~~
 
-# Sección de Metadata
+## Sección de Metadata
 
-## El elemento `metadata`
+### El elemento `metadata`
 
 Información que el elemento puede encapsular.
 
@@ -106,9 +106,9 @@ Las funciones principales del elemento `metadata` del `Package Document` son:
 El elemento `metadata` debe contener de forma mínima los \[[dcterms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)\] dejando el resto de la metadata como *OPCIONAL*
 Los \[[dcterms](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)\] son:
 
-## Elementos Dublin Core Requeridos
+### Elementos Dublin Core Requeridos
 
-### El elemento `dc:identifier`
+#### El elemento `dc:identifier`
 
 El elemento `dc:identifier` puede contener un identificador UUID, DOI o ISBN.
 
@@ -122,9 +122,10 @@ El elemento `dc:identifier` puede contener un identificador UUID, DOI o ISBN.
 >   <dt>CONTENIDO</dt>
 >       <dd>Texto</dd>
 ></dl>
+>
 {: .block-doc }
 
-### El elemento `dc:title`
+#### El elemento `dc:title`
 
 Información que el elemento puede encapsular.
 
@@ -142,7 +143,7 @@ Información que el elemento puede encapsular.
 ></dl>
 {: .block-doc }
 
-### El elemento `dc:language`
+#### El elemento `dc:language`
 
 Información que el elemento puede encapsular.
 
@@ -158,4 +159,56 @@ Información que el elemento puede encapsular.
 ></dl>
 {: .block-doc }
 
-## Elementos Dublin Core Opcionales
+### Elementos Dublin Core Opcionales
+
+#### El elemento `dc:contributor`
+
+Información que el elemento puede encapsular.
+
+><dl>
+>   <dt>NOMBRE</dt>
+>       <dd>dc:contributor</dd>
+>   <dt>USO</dt>
+>       <dd>Opcional (Hijo de metadata)</dd>
+>   <dt>ATRIBUTOS</dt>
+>       <dd>dir [Opcional]</dd>
+>       <dd>id [Opcional]</dd>
+>       <dd>xml:lang [Opcional]</dd>
+>   <dt>CONTENIDO</dt>
+>       <dd>Texto</dd>
+></dl>
+{: .block-doc }
+
+#### El elemento `dc:coverage`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:creator`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:date`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:description`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:format`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:publisher`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:relation`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:rights`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:source`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:subject`
+
+Información que el elemento puede encapsular.
+#### El elemento `dc:type`
+
+Información que el elemento puede encapsular.
