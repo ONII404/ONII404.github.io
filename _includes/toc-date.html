@@ -11,7 +11,7 @@
         function mobilePageScrollToAnchor(element) {
             $(element).closest('li.chapter').find('ul>li').removeClass('active');
             $(element).parent().addClass('active');
-            if ($(document).width() <= 1024) {
+            if ($(document).width() <= 1240) {
                 $('div.body-inner').animate({scrollTop: $($(element).attr('href')).get(0).offsetTop});
             }
             return true;
@@ -21,20 +21,38 @@
     <nav role="navigation">
         <div id="book-search-input" role="search">
             <input type="text" placeholder="Type to search" />
-@@ -12,7 +31,7 @@
+        </div>
+        <div id="book-search-input-link" role="search">
+            <a href="{{site.baseurl}}/assets/search.html">Click to Search</a>
+        </div>
+        <ul class="summary">
+            {% if page.url == "/index.html" or page.url == "/" %}
+            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
             {% else %}
             <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
-                <a href="{{site.baseurl}}/">
                 <a href="{{site.baseurl}}/" onclick="pageScrollToTop(this)">
                     {{ site.title | escape }}
                 </a>
             </li>
-@@ -34,7 +53,7 @@
+
+            <li class="divider"></li>
+
+            {% for collection in site.collections %}
+                <!-- <p>{{ collection.label }}</p> -->
+                {% if collection.output %}
+                    {% if collection.label == "posts" %}
+                        {% assign reversed_posts = site[collection.label] | reverse %}
+                    {% else %}
+                        {% assign reversed_posts = site[collection.label] %}
+                    {% endif %}
+
+                    {% for post in reversed_posts %}
+                        {% if page.url == post.url %}
+                        <li class="chapter active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                         {% else %}
                         <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                         {% endif %}
-                            <a href="{{site.baseurl}}{{post.url}}">
                             <a href="{{site.baseurl}}{{post.url}}" onclick="pageScrollToTop(this)">
                                 {{ post.title | escape }}
                             </a>
@@ -45,11 +63,13 @@
                             {% endif %}
                         </li>
                     {% endfor %}
+
                     {% if reversed_posts.size > 0 %}
                         <li class="divider"></li>
                     {% endif %}
                 {% endif %}
             {% endfor %}
+
             <li>
                 <a href="https://github.com/sighingnow/jekyll-gitbook/fork" target="blank" class="gitbook-link">
                     Fork it Now!
@@ -57,3 +77,4 @@
             </li>
         </ul>
     </nav>
+</div>
