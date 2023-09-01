@@ -300,6 +300,11 @@
     color: var(--c-danger-title);
 }
 
+pre:has(code.language-mermaid[data-processed="true"]) {
+    background-color: #ffffff;
+    text-align: center;
+}
+
 :root {
     /* Dark theme */
     --c-tip-bg-dark: #b7e2ce;
